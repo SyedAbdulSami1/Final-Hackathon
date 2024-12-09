@@ -21,7 +21,7 @@ export default function Blog() {
           />
           <div className="w-full flex flex-col items-center justify-start gap-3">
             <div className="font-medium">Going all-in with millennial design</div>
-            <Link href="#" className="border-b-2 pb-2 text-xl font-medium">Read More</Link>
+            <Link href="/Blog" className="border-b-2 pb-2 text-xl font-medium">Read More</Link>
             <div className="flex gap-6 text-left text-sm">
               <div className="flex items-center gap-2">
                 <Image className="w-4 h-4" width={18} height={18} alt="time icon" src="/images/Vector-time.svg" />
@@ -44,7 +44,7 @@ export default function Blog() {
           />
           <div className="w-full flex flex-col items-center justify-start gap-3">
             <div className="font-medium">Going all-in with millennial design</div>
-            <Link href="#" className="border-b-2 pb-2 text-xl font-medium">Read More</Link>
+            <Link href="/Blog" className="border-b-2 pb-2 text-xl font-medium">Read More</Link>
             <div className="flex gap-6 text-left text-sm">
               <div className="flex items-center gap-2">
                 <Image className="w-4 h-4" width={18} height={18} alt="time icon" src="/images/Vector-time.svg" />
@@ -67,7 +67,7 @@ export default function Blog() {
           />
           <div className="w-full flex flex-col items-center justify-start gap-3">
             <div className="font-medium">Going all-in with millennial design</div>
-            <Link href="#" className="border-b-2 pb-2 text-xl font-medium">Read More</Link>
+            <Link href="/Blog" className="border-b-2 pb-2 text-xl font-medium">Read More</Link>
             <div className="flex gap-6 text-left text-sm">
               <div className="flex items-center gap-2">
                 <Image className="w-4 h-4" width={18} height={18} alt="time icon" src="/images/Vector-time.svg" />
@@ -83,7 +83,7 @@ export default function Blog() {
       </div>
 
       <div className="w-full flex justify-center">
-        <Link href="#" className="text-xl font-medium border-b-2 pb-2">
+        <Link href="/Blog" className="text-xl font-medium border-b-2 pb-2">
           View More
         </Link>
       </div>

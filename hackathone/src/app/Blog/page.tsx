@@ -1,3 +1,5 @@
+import Image from "next/image";
+import React from "react";
 
 export default function Blog() {
   return (
@@ -6,7 +8,7 @@ export default function Blog() {
       <h2 className="text-3xl font-extrabold text-gray-800 mb-8">Latest Blog Posts</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:gap-8">
         <div className="bg-white rounded overflow-hidden">
-          <img src="https://readymadeui.com/cardImg.webp" alt="Blog Post 1" className="w-full h-52 object-cover" />
+          <Image src="/images/cardImg1.webp" height={393} width={393} alt="Blog Post 1" className="w-full h-52 object-cover" />
           <div className="p-6">
             <h3 className="text-lg font-bold text-gray-800 mb-3">Lorem Ipsum Dolor</h3>
             <p className="text-gray-500 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
@@ -15,7 +17,7 @@ export default function Blog() {
           </div>
         </div>
         <div className="bg-white rounded overflow-hidden">
-          <img src="https://readymadeui.com/hotel-img.webp" alt="Blog Post 2" className="w-full h-52 object-cover" />
+          <Image src="/images/cardImg2.webp" height={393} width={393} alt="Blog Post 2" className="w-full h-52 object-cover" />
           <div className="p-6">
             <h3 className="text-lg font-bold text-gray-800 mb-3">Consectetur Adipiscing</h3>
             <p className="text-gray-500 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
@@ -24,7 +26,7 @@ export default function Blog() {
           </div>
         </div>
         <div className="bg-white rounded overflow-hidden">
-          <img src="https://readymadeui.com/team-image.webp" alt="Blog Post 3" className="w-full h-52 object-cover" />
+          <Image src="/images/cardImg3.webp" height={393} width={393} alt="Blog Post 3" className="w-full h-52 object-cover" />
           <div className="p-6">
             <h3 className="text-lg font-bold text-gray-800 mb-3">Lorem Ipsum Sit Amet</h3>
             <p className="text-gray-500 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
@@ -33,7 +35,7 @@ export default function Blog() {
           </div>
         </div>
         <div className="bg-white rounded overflow-hidden">
-          <img src="https://readymadeui.com/prediction.webp" alt="Blog Post 3" className="w-full h-52 object-cover" />
+          <Image src="/images/cardImg4.webp" height={393} width={393} alt="Blog Post 3" className="w-full h-52 object-cover" />
           <div className="p-6">
             <h3 className="text-lg font-bold text-gray-800 mb-3">Lorem Ipsum Sit Amet</h3>
             <p className="text-gray-500 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
@@ -42,7 +44,7 @@ export default function Blog() {
           </div>
         </div>
         <div className="bg-white rounded overflow-hidden">
-          <img src="https://readymadeui.com/hacks-watch.webp" alt="Blog Post 3" className="w-full h-52 object-cover" />
+          <Image src="/images/cardImg5.webp" height={393} width={393} alt="Blog Post 3" className="w-full h-52 object-cover" />
           <div className="p-6">
             <h3 className="text-lg font-bold text-gray-800 mb-3">Lorem Ipsum Sit Amet</h3>
             <p className="text-gray-500 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
@@ -51,7 +53,7 @@ export default function Blog() {
           </div>
         </div>
         <div className="bg-white rounded overflow-hidden">
-          <img src="https://readymadeui.com/Imagination.webp" alt="Blog Post 3" className="w-full h-52 object-cover" />
+          <Image src="/images/cardImg6.webp" height={393} width={393} alt="Blog Post 3" className="w-full h-52 object-cover" />
           <div className="p-6">
             <h3 className="text-lg font-bold text-gray-800 mb-3">Lorem Ipsum Sit Amet</h3>
             <p className="text-gray-500 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>

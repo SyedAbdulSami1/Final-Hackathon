@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-
 export default function Feseli() {
   return (
     <div className="w-full relative bg-[#faf4f4] h-full flex flex-wrap justify-center items-center gap-[46px] p-[96px_100px] text-left text-[32px] text-black font-poppins">
