@@ -1,139 +1,65 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+
+const products = [
+  { id: 1, name: "Trenton modular sofa_3", price: 25000, image: "/images/Trenton modular sofa_3 1.png" },
+  { id: 2, name: "Granite dining table with dining chair", price: 25000, image: "/images/Granite dining table with dining chair 1.png" },
+  { id: 3, name: "Outdoor bar table and stool", price: 25000, image: "/images/Outdoor bar table and stool 1.png" },
+  { id: 4, name: "Plain console with teak mirror", price: 25000, image: "/images/Plain console with teak mirror 1.png" },
+  { id: 5, name: "Grain coffee table", price: 15000, image: "/images/Grain coffee table 1.png" },
+  { id: 6, name: "Kent coffee table", price: 225000, image: "/images/Kent coffee table 1.png" },
+  { id: 7, name: "Round coffee table_color 2", price: 251000, image: "/images/Round coffee table_color 2 1.png" },
+  { id: 8, name: "Reclaimed teak coffee table", price: 25200, image: "/images/Reclaimed teak coffee table 1.png" },
+  { id: 9, name: "Plain console_", price: 258200, image: "/images/Plain console_ 1.png" },
+  { id: 10, name: "Reclaimed teak Sideboard", price: 20000, image: "/images/Reclaimed teak Sideboard 1.png" },
+  { id: 11, name: "SJP_0825 ", price: 200000, image: "/images/SJP_0825  1.png" },
+  { id: 12, name: "Bella chair and table", price: 100000, image: "/images/Bella chair and table 1.png" },
+  { id: 13, name: "Granite square side table", price: 258800, image: "/images/Granite square side table 2.png" },
+  { id: 14, name: "Asgaard sofa", price: 250000, image: "/images/Asgaard sofa 2.png" },
+  { id: 15, name: "Maya sofa three seater", price: 115000, image: "/images/Maya sofa three seater 1.png" },
+  { id: 16, name: "Outdoor sofa set", price: 244000, image: "/images/Outdoor sofa set 1.png" },
+]
 
 export default function Shopcard() {
+	const currentProducts = products
   return (
-    <div style={{width: "100%", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "17px 100px 92px", boxSizing: "border-box", textAlign: "left", fontSize: "16px", color: "#000", fontFamily: "Poppins",}}>
-      			<div style={{width: "1243px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "117px",}}>
-        				<div style={{alignSelf: "stretch", display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "center", flexWrap: "wrap", alignContent: "flex-start", gap: "24px",}}>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "194px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "11px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Trenton modular sofa_3</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 25,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "212px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "12px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Granite dining table with dining chair</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 25,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "212px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "12px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Outdoor bar table and stool</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 25,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "199px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "12px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Plain console with teak mirror</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 25,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "152px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "11px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Grain coffee table</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 15,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "212px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "11px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Kent coffee table</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 225,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "16px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "212px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "12px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Round coffee table_color 2</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 251,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "16px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "199px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "12px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Reclaimed teak coffee table</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 25,200.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "172px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "10px",}}>
-              							<div style={{position: "relative",}}>Plain console_</div>
-              							<div style={{position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 258,200.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "288px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "13px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "212px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "10px",}}>
-              							<div style={{width: "212px", position: "relative", display: "inline-block",}}>Reclaimed teak Sideboard</div>
-              							<div style={{position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 20,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "16px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "212px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "10px",}}>
-              							<div style={{width: "212px", position: "relative", display: "inline-block",}}>{`SJP_0825 `}</div>
-              							<div style={{position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 200,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "288px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "17px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "199px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "10px",}}>
-              							<div style={{alignSelf: "stretch", position: "relative",}}>Bella chair and table</div>
-              							<div style={{alignSelf: "stretch", position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 100,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "203px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "10px",}}>
-              							<div style={{position: "relative",}}>Granite square side table</div>
-              							<div style={{position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 258,800.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{width: "212px", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "10px",}}>
-              							<div style={{width: "212px", position: "relative", display: "inline-block",}}>Asgaard sofa</div>
-              							<div style={{position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 250,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "292px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "11px",}}>
-              							<div style={{width: "212px", position: "relative", display: "inline-block",}}>Maya sofa three seater</div>
-              							<div style={{position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 115,000.00</div>
-            						</div>
-          					</div>
-          					<div style={{width: "287px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", gap: "14px",}}>
-            						<Image style={{width: "287px", position: "relative", height: "287px", objectFit: "cover",}} width={287} height={287} alt="" src="/Mask group.png" />
-            						<div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start", gap: "11px",}}>
-              							<div style={{width: "199px", position: "relative", display: "inline-block",}}>Outdoor sofa set</div>
-              							<div style={{position: "relative", fontSize: "24px", fontWeight: "500",}}>Rs. 244,000.00</div>
-            						</div>
-          					</div>
-        				</div>
-        				<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "flex-start", gap: "38px", fontSize: "20px",}}>
-          					<div style={{width: "60px", borderRadius: "10px", backgroundColor: "#fbebb5", height: "60px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "15px 26px", boxSizing: "border-box",}}>
-            						<div style={{position: "relative",}}>1</div>
-          					</div>
-          					<div style={{width: "60px", borderRadius: "10px", backgroundColor: "#fff9e5", height: "60px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "15px 24px", boxSizing: "border-box",}}>
-            						<div style={{position: "relative",}}>2</div>
-          					</div>
-          					<div style={{width: "60px", borderRadius: "10px", backgroundColor: "#fff9e5", height: "60px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "15px 24px", boxSizing: "border-box",}}>
-            						<div style={{position: "relative",}}>3</div>
-          					</div>
-          					<div style={{width: "98px", borderRadius: "10px", backgroundColor: "#fff9e5", height: "60px", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", padding: "15px 27px", boxSizing: "border-box",}}>
-            						<div style={{position: "relative", fontWeight: "300",}}>Next</div>
-          					</div>
-        				</div>
-      			</div>
-    		</div>
-  );
+    <div className="w-full relative flex flex-col items-center justify-center px-25 py-4 pb-23 box-border text-left text-base text-black font-poppins">
+      <div className="w-full max-w-[1243px] flex flex-col items-center justify-start gap-[117px]">
+        <div className="self-stretch flex flex-row flex-wrap items-start justify-center content-start gap-6">
+          {currentProducts.map((product) => (
+            <div key={product.id} className="w-[287px] flex flex-col items-center justify-start gap-3.5">
+              <div className="w-full h-[287px] flex flex-col items-center justify-center">
+				<Image
+                className="w-full relative h-max object-cover"
+                width={287}
+                height={287}
+                alt={product.name}
+                src={product.image || "/placeholder.svg"}
+				/>
+			  </div>
+              <div className="w-full max-w-[212px] flex flex-col items-start justify-start gap-2.5">
+                <div className="self-stretch relative">{product.name}</div>
+                <div className="self-stretch relative text-2xl font-medium">
+                  Rs. {product.price.toLocaleString()}.00
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-row items-center justify-start gap-9 text-xl">
+			<button className="w-[60px] rounded-lg bg-[#fbebb5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
+            <div className="relative font-light">1</div>
+			</button>
+			<button className="w-[60px] rounded-lg bg-[#fff9e5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
+            <div className="relative font-light">2</div>
+			</button>
+			<button className="w-[60px] rounded-lg bg-[#fff9e5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
+            <div className="relative font-light">3</div>
+			</button>
+			<button className="w-[98px] rounded-lg bg-[#fff9e5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
+            <div className="relative font-light">Next</div>
+			</button>
+        </div>
+      </div>
+    </div>
+  )
 }
