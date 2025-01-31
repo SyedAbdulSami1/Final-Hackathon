@@ -1,4 +1,3 @@
-"use client";
 import Arlist from "../components/arlist";
 import Feseli from "../components/feseli";
 import Shopcard from "../components/shopcard";
