@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image"
+import { GetData } from "../../../sanity.query"
 
-const products = [
+/*const products = [
   { id: 1, name: "Trenton modular sofa_3", price: 25000, image: "/images/Trenton modular sofa_3 1.png" },
   { id: 2, name: "Granite dining table with dining chair", price: 25000, image: "/images/Granite dining table with dining chair 1.png" },
   { id: 3, name: "Outdoor bar table and stool", price: 25000, image: "/images/Outdoor bar table and stool 1.png" },
@@ -17,25 +19,27 @@ const products = [
   { id: 14, name: "Asgaard sofa", price: 250000, image: "/images/Asgaard sofa 2.png" },
   { id: 15, name: "Maya sofa three seater", price: 115000, image: "/images/Maya sofa three seater 1.png" },
   { id: 16, name: "Outdoor sofa set", price: 244000, image: "/images/Outdoor sofa set 1.png" },
-]
+]*/
+const products = GetData();
 
-export default function Shopcard() {
-	const currentProducts = products
+export default async function Shopcard() {
+	const currentProducts = await products
   return (
     <div className="w-full relative flex flex-col items-center justify-center px-25 py-4 pb-23 box-border text-left text-base text-black font-poppins">
       <div className="w-full max-w-[1243px] flex flex-col items-center justify-start gap-[117px]">
         <div className="self-stretch flex flex-row flex-wrap items-start justify-center content-start gap-6">
-          {currentProducts.map((product) => (
+          {currentProducts.map((product:any) => (
             <div key={product.id} className="w-[287px] flex flex-col items-center justify-start gap-3.5">
-              <div className="w-full h-[287px] flex flex-col items-center justify-center">
-				<Image
-                className="w-full relative h-max object-cover"
+              <div className="relative w-full h-64 overflow-hidden">
+                <Image
+                className="object-cover w-full h-full rounded-lg"
                 width={287}
                 height={287}
                 alt={product.name}
-                src={product.image || "/placeholder.svg"}
-				/>
-			  </div>
+                src={product.imageURL || "/placeholder.svg"}
+                />
+              </div>
+
               <div className="w-full max-w-[212px] flex flex-col items-start justify-start gap-2.5">
                 <div className="self-stretch relative">{product.name}</div>
                 <div className="self-stretch relative text-2xl font-medium">
@@ -60,6 +64,7 @@ export default function Shopcard() {
 			</button>
         </div>
       </div>
+      
     </div>
   )
 }
