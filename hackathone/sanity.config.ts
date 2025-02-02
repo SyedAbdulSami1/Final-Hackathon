@@ -13,8 +13,8 @@ import {apiVersion, dataset, projectId} from './src/sanity/env'
 import {schema} from './src/sanity/schemaTypes'
 import {structure} from './src/sanity/structure'
 
-const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'default_project_id';
-const sanityDataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'default_dataset';
+const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '41vx6pz3';
+const sanityDataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
 
 export default defineConfig({
   basePath: '/studio',
