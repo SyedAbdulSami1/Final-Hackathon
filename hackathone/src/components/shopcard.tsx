@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { GetData } from "../../../sanity.query"
+import { GetData } from "../../sanity.query";
 
 /*const products = [
   { id: 1, name: "Trenton modular sofa_3", price: 25000, image: "/images/Trenton modular sofa_3 1.png" },
