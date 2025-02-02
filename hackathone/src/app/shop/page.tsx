@@ -4,13 +4,12 @@ import Feseli from "@/components/feseli";
 import Shopcard from "@/components/shopcard";
 
 export default async function Shop() {
-  const allCards = await Shopcard()
   return (
-    <>
+    <div>
     <Shopheader/>
     <Arlist/>
-    {allCards}
+    <Shopcard/>
     <Feseli/>
-    </>
+    </div>
   );
 }

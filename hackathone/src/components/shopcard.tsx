@@ -1,5 +1,13 @@
 import Image from "next/image"
-import { GetData } from "../../sanity.query";
+import { GetData } from "../../sanity.query"
+
+// Product type ko explicitly define karen
+interface Product {
+  id: number
+  name: string
+  price: number
+  imageURL: string
+}
 
 /*const products = [
   { id: 1, name: "Trenton modular sofa_3", price: 25000, image: "/images/Trenton modular sofa_3 1.png" },
@@ -19,28 +27,42 @@ import { GetData } from "../../sanity.query";
   { id: 15, name: "Maya sofa three seater", price: 115000, image: "/images/Maya sofa three seater 1.png" },
   { id: 16, name: "Outdoor sofa set", price: 244000, image: "/images/Outdoor sofa set 1.png" },
 ]*/
-const products = GetData();
 
-export default async function Shopcard() {
-	const currentProducts = await products
+export default async function ShopCard() {
+  // Error handling add karen
+  let currentProducts: Product[] = []
+  try {
+    currentProducts = await GetData()
+  } catch (error) {
+    console.error("Error fetching products:", error)
+    // Optional: Error state dikhaye
+    return <div>Error loading products</div>
+  }
+
+  // Agar koi products nahi mile to
+  if (!currentProducts?.length) {
+    return <div>No products found</div>
+  }
+
   return (
     <div className="w-full relative flex flex-col items-center justify-center px-25 py-4 pb-23 box-border text-left text-base text-black font-poppins">
       <div className="w-full max-w-[1243px] flex flex-col items-center justify-start gap-[117px]">
         <div className="self-stretch flex flex-row flex-wrap items-start justify-center content-start gap-6">
-          {currentProducts.map((product:{ id: number; name: string; price: number; imageURL: string }) => (
+          {currentProducts.map((product) => (
             <div key={product.id} className="w-[287px] flex flex-col items-center justify-start gap-3.5">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
-                className="object-cover w-full h-full rounded-lg"
-                width={287}
-                height={287}
-                alt={product.name}
-                src={product.imageURL || "/placeholder.svg"}
+                  className="object-cover w-full h-full rounded-lg"
+                  width={287}
+                  height={287}
+                  alt={product.name}
+                  src={product.imageURL || "/placeholder.svg"}
+                  priority={false}
                 />
               </div>
 
               <div className="w-full max-w-[212px] flex flex-col items-start justify-start gap-2.5">
-                <div className="self-stretch relative">{product.name}</div>
+                <div className="self-stretch relative line-clamp-2">{product.name}</div>
                 <div className="self-stretch relative text-2xl font-medium">
                   Rs. {product.price.toLocaleString()}.00
                 </div>
@@ -48,22 +70,24 @@ export default async function Shopcard() {
             </div>
           ))}
         </div>
+
+        {/* Pagination */}
         <div className="flex flex-row items-center justify-start gap-9 text-xl">
-			<button className="w-[60px] rounded-lg bg-[#fbebb5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
-            <div className="relative font-light">1</div>
-			</button>
-			<button className="w-[60px] rounded-lg bg-[#fff9e5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
-            <div className="relative font-light">2</div>
-			</button>
-			<button className="w-[60px] rounded-lg bg-[#fff9e5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
-            <div className="relative font-light">3</div>
-			</button>
-			<button className="w-[98px] rounded-lg bg-[#fff9e5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
+          {[1, 2, 3].map((page) => (
+            <button
+              key={page}
+              className={`w-[60px] rounded-lg ${
+                page === 1 ? "bg-[#fbebb5]" : "bg-[#fff9e5]"
+              } h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border`}
+            >
+              <div className="relative font-light">{page}</div>
+            </button>
+          ))}
+          <button className="w-[98px] rounded-lg bg-[#fff9e5] h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border">
             <div className="relative font-light">Next</div>
-			</button>
+          </button>
         </div>
       </div>
-      
     </div>
   )
 }
