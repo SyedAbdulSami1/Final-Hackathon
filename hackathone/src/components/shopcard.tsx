@@ -1,13 +1,14 @@
-import Image from "next/image"
-import { GetData } from "../../sanity.query"
+"use client"
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { GetData } from '../../sanity.query';
 
 interface Product {
-  _id: string
-  name: string
-  price: number
-  imageURL: string
+  _id: string;
+  name: string;
+  price: number;
+  imageURL: string;
 }
-
 /*const products = [
   { id: 1, name: "Trenton modular sofa_3", price: 25000, image: "/images/Trenton modular sofa_3 1.png" },
   { id: 2, name: "Granite dining table with dining chair", price: 25000, image: "/images/Granite dining table with dining chair 1.png" },
@@ -27,18 +28,28 @@ interface Product {
   { id: 16, name: "Outdoor sofa set", price: 244000, image: "/images/Outdoor sofa set 1.png" },
 ]*/
 
-export default async function ShopCard() {
-  let products: Product[] = []
-  try {
-    products = await GetData()
-  } catch (error) {
-    console.error("Error fetching products:", error)
-    return <div>Products load karne mein error aaya</div>
+
+
+const ShopCard: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await GetData();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (!products.length) {
+    return <div>Any products not received</div>;
   }
 
-  if (!products?.length) {
-    return <div>Any products not received</div>
-  }
   return (
     <div className="w-full relative flex flex-col items-center justify-center px-25 py-4 pb-23 box-border text-left text-base text-black font-poppins">
       <div className="w-full max-w-[1243px] flex flex-col items-center justify-start gap-[117px]">
@@ -51,7 +62,7 @@ export default async function ShopCard() {
                   width={287}
                   height={287}
                   alt={product.name}
-                  src={product.imageURL || "/placeholder.svg"}
+                  src={product.imageURL || '/placeholder.svg'}
                   priority={false}
                 />
               </div>
@@ -71,9 +82,7 @@ export default async function ShopCard() {
           {[1, 2, 3].map((page) => (
             <button
               key={page}
-              className={`w-[60px] rounded-lg ${
-                page === 1 ? "bg-[#fbebb5]" : "bg-[#fff9e5]"
-              } h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border`}
+              className={`w-[60px] rounded-lg ${page === 1 ? 'bg-[#fbebb5]' : 'bg-[#fff9e5]'} h-15 flex flex-row items-center justify-center px-[27px] py-[15px] box-border`}
             >
               <div className="relative font-light">{page}</div>
             </button>
@@ -84,6 +93,7 @@ export default async function ShopCard() {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
+export default ShopCard;
