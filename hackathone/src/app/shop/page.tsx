@@ -3,8 +3,11 @@ import Arlist from "@/components/arlist"
 import Feseli from "@/components/feseli"
 import Shopcard from "@/components/shopcard"
 import { Suspense } from "react"
+import { GetData } from "../../../sanity.query"
 
-export default function Shop() {
+export default async function Shop() {
+  const data = await GetData();
+  console.log(data);
   return (
     <div>
       <Shopheader />
@@ -17,11 +20,3 @@ export default function Shop() {
   )
 }
 
-// Add getStaticProps to enable ISR
-export async function getStaticProps() {
-  return {
-    props: {},
-    // Revalidate the page every 3 seconds
-    revalidate: 3,
-  }
-}
