@@ -1,9 +1,8 @@
 import Image from "next/image"
 import { GetData } from "../../sanity.query"
 
-// Product type ko explicitly define karen
 interface Product {
-  id: number
+  _id: string
   name: string
   price: number
   imageURL: string
@@ -29,27 +28,23 @@ interface Product {
 ]*/
 
 export default async function ShopCard() {
-  // Error handling add karen
-  let currentProducts: Product[] = []
+  let products: Product[] = []
   try {
-    currentProducts = await GetData()
+    products = await GetData()
   } catch (error) {
     console.error("Error fetching products:", error)
-    // Optional: Error state dikhaye
-    return <div>Error loading products</div>
+    return <div>Products load karne mein error aaya</div>
   }
 
-  // Agar koi products nahi mile to
-  if (!currentProducts?.length) {
-    return <div>No products found</div>
+  if (!products?.length) {
+    return <div>Any products not received</div>
   }
-
   return (
     <div className="w-full relative flex flex-col items-center justify-center px-25 py-4 pb-23 box-border text-left text-base text-black font-poppins">
       <div className="w-full max-w-[1243px] flex flex-col items-center justify-start gap-[117px]">
         <div className="self-stretch flex flex-row flex-wrap items-start justify-center content-start gap-6">
-          {currentProducts.map((product) => (
-            <div key={product.id} className="w-[287px] flex flex-col items-center justify-start gap-3.5">
+          {products.map((product) => (
+            <div key={product._id} className="w-[287px] flex flex-col items-center justify-start gap-3.5">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
                   className="object-cover w-full h-full rounded-lg"
@@ -91,3 +86,4 @@ export default async function ShopCard() {
     </div>
   )
 }
+
