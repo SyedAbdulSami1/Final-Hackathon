@@ -15,7 +15,8 @@ const clientConfig: ClientConfig = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "41vx6pz3",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   apiVersion: "2025-02-02", // Replace with your API version
-  useCdn: false, // Set to true if you want to use the CDN
+  useCdn: true, 
+  //useCdn: false, // Set to true if you want to use the CDN
 };
 
 const client = createClient(clientConfig);
