@@ -27,7 +27,7 @@ export default async function Shopcard() {
     <div className="w-full relative flex flex-col items-center justify-center px-25 py-4 pb-23 box-border text-left text-base text-black font-poppins">
       <div className="w-full max-w-[1243px] flex flex-col items-center justify-start gap-[117px]">
         <div className="self-stretch flex flex-row flex-wrap items-start justify-center content-start gap-6">
-          {currentProducts.map((product:any) => (
+          {currentProducts.map((product:{ id: number; name: string; price: number; imageURL: string }) => (
             <div key={product.id} className="w-[287px] flex flex-col items-center justify-start gap-3.5">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
