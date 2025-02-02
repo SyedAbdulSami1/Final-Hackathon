@@ -15,7 +15,7 @@ export default function Card() {
         <div className="px-[20px] lg:px-[105px] gap-[23px]">
           <div className="font-medium">Side table</div>
           <div className="w-max border-b-2 border-black h-[49px] flex items-center text-[18px] lg:text-[24px]">
-            <div className="font-medium">View More</div>
+          <div className="font-medium"><Link href={"/shop"}>View More</Link></div>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function Card() {
         <div className="px-[20px] lg:px-[105px] gap-[23px]">
           <div className="font-medium">Side table</div>
           <div className="w-max border-b-2 border-black h-[49px] flex items-center text-[18px] lg:text-[24px]">
-            <div className="font-medium"><Link href={"/"}>View More</Link></div>
+            <div className="font-medium"><Link href={"/shop"}>View More</Link></div>
           </div>
         </div>
       </div>

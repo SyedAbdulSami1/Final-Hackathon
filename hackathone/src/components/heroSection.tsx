@@ -8,7 +8,7 @@ export default function HeroSection() {
         <div className=" lg:w-[30vw] sm:w-auto font-medium text-[32px] lg:text-[64px]">Rocket single seater</div>
         <div className="w-max border-b-2 border-black h-[49px] flex flex-col items-start justify-start text-[18px] lg:text-[24px]">
           <div className="font-medium">
-            <Link href='/'>Shop Now </Link>
+            <Link href='/shop'>Shop Now </Link>
           </div>
         </div>
       </div>

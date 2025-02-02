@@ -60,7 +60,7 @@ export default function Toppick() {
       </div>
       <div className="w-max border-b-2 border-black h-[49px] flex items-start justify-center text-xl">
         <div className="font-medium">
-          <Link href={"/"}>View More</Link>
+          <Link href={"/shop"}>View More</Link>
         </div>
       </div>
     </div>
