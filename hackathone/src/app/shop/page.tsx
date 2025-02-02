@@ -17,3 +17,11 @@ export default function Shop() {
   )
 }
 
+// Add getStaticProps to enable ISR
+export async function getStaticProps() {
+  return {
+    props: {},
+    // Revalidate the page every 3 seconds
+    revalidate: 3,
+  }
+}
