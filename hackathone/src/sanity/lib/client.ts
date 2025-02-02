@@ -9,12 +9,15 @@ export const client = createClient({
   useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
 })
 */
-import { type ClientConfig, createClient } from "next-sanity";
+import { createClient, type ClientConfig } from "next-sanity";
 
-const client: ClientConfig ={
-    projectId: "41vx6pz3",
-    dataset: "production",
-    apiVersion: "2025-02-02",
-    useCdn: false,
-}
-export default createClient(client)
+const clientConfig: ClientConfig = {
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "41vx6pz3",
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  apiVersion: "2025-02-02", // Replace with your API version
+  useCdn: false, // Set to true if you want to use the CDN
+};
+
+const client = createClient(clientConfig);
+
+export default client;
