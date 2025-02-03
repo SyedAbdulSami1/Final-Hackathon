@@ -30,7 +30,7 @@ interface Product {
 
 
 
-const ShopCard: React.FC = () => {
+const ShopCardold: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -96,4 +96,4 @@ const ShopCard: React.FC = () => {
   );
 };
 
-export default ShopCard;
+export default ShopCardold;
