@@ -15,3 +15,43 @@ export async function GetData(){
         }`
     )
 }
+
+// For product listing
+export async function GetProducts() {
+  return client.fetch(
+    groq`*[_type=="product"]{
+      _id,
+      name,
+      description,
+      category,
+      price,
+      discountPercentage,
+      stockLevel,
+      "imageURLs": images[].asset->url
+    }`
+  )
+}
+
+// For single product
+export async function GetProductData(id: string) {
+  return client.fetch(
+    groq`*[_type=="product" && _id == $id][0]{
+      _id,
+      name,
+      description,
+      category,
+      price,
+      discountPercentage,
+      stockLevel,
+      "imageURLs": images[].asset->url,
+      sizes,
+      reviews[]{
+        user,
+        rating,
+        comment,
+        date
+      }
+    }`,
+    { id }
+  )
+}
