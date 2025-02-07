@@ -4,12 +4,14 @@ import Feseli from "@/components/feseli";
 import { GetData } from "../../../sanity.query";
 import React from 'react';
 import Image from 'next/image';
+import Link from "next/link";
 
 interface Product {
   _id: string;
   name: string;
   price: number;
   imageURL: string;
+  discountPercentage: number;
 }
 
 /*const products = [
@@ -54,27 +56,36 @@ const ShopPage: React.FC = async () => {
       <Arlist />
       <div className="w-full relative flex flex-col items-center justify-center px-25 py-4 pb-23 box-border text-left text-base text-black font-poppins">
         <div className="w-full max-w-[1243px] flex flex-col items-center justify-start gap-[117px]">
-          <div className="self-stretch flex flex-row flex-wrap items-start justify-center content-start gap-6">
+          <div className="self-stretch flex flex-row flex-wrap items-start justify-center content-start gap-20">
             {products.map((product) => (
-              <div key={product._id} className="w-[287px] flex flex-col items-center justify-start gap-3.5">
-                <div className="relative w-full h-64 overflow-hidden">
-                  <Image
+              <Link href={`/shop/${product._id}`}>
+                <div key={product._id} className="w-[287px] flex flex-col items-center justify-start gap-3.5 mt-10">
+                  <div className="relative w-full h-64 overflow-hidden">
+                    <Image
                     className="object-cover w-full h-full rounded-lg"
                     width={287}
                     height={287}
                     alt={product.name}
                     src={product.imageURL || '/placeholder.svg'}
                     priority={false}
-                  />
-                </div>
+                    />
+                  </div>
 
-                <div className="w-full max-w-[212px] flex flex-col items-start justify-start gap-2.5">
-                  <div className="self-stretch relative line-clamp-2">{product.name}</div>
-                  <div className="self-stretch relative text-2xl font-medium">
+                  <div className="w-full flex flex-col items-start justify-start gap-2.5">
+                    <div className="self-stretch relative line-clamp-2">{product.name}</div>
+                    <div className="self-stretch relative text-2xl font-medium">
                     Rs. {product.price.toLocaleString()}.00
+                    </div>
+                    <p className="font-poppins text-[14px] text-[#FF5733]">
+                    Discount: {product.discountPercentage}%
+                    </p>
+                    <button className="w-full border border-gray rounded-[10px] h-[64px] flex items-center justify-center px-8 text-center text-xl hover:text-[#8b5d42] hover:border-[#8b5d42]">
+                      Product Detail
+                    </button>
+                  
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

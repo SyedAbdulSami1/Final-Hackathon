@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { GetProductData } from '../../../../sanity.query';
@@ -29,10 +29,14 @@ const ProductPage = () => {
   const [product, setProduct] = useState<Product | null>(null);
 
   // Fetch product data from Sanity
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchProduct = async () => {
-      const data = await GetProductData(id as string);
-      setProduct(data);
+      try {
+        const data = await GetProductData(id as string);
+        setProduct(data);
+      } catch (error) {
+        console.error('Failed to fetch product data:', error);
+      }
     };
     fetchProduct();
   }, [id]);
@@ -84,12 +88,7 @@ const ProductPage = () => {
                 </h4>
                 {product.discountPrice && (
                   <p className="text-gray-500 text-lg">
-                    {product.discountPrice && (
-                      <p className="text-gray-500 text-lg">
-                        <s>${product.price}</s>
-                      <span className="text-sm ml-1.5">Tax included</span>
-                      </p>
-                    )}
+                    <s>${product.price}</s>
                     <span className="text-sm ml-1.5">Tax included</span>
                   </p>
                 )}
