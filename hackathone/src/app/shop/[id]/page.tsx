@@ -197,7 +197,7 @@ const ProductPage = () => {
 
             <hr className="my-6 border-gray-300" />
 
-            {/* Customer Reviews */}
+            {/* Customer Reviews for other*/}
             <div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-800">Customer Reviews</h3>
               <div className="mt-6">

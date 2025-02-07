@@ -58,8 +58,8 @@ const ShopPage: React.FC = async () => {
         <div className="w-full max-w-[1243px] flex flex-col items-center justify-start gap-[117px]">
           <div className="self-stretch flex flex-row flex-wrap items-start justify-center content-start gap-20">
             {products.map((product) => (
-              <Link href={`/shop/${product._id}`}>
-                <div key={product._id} className="w-[287px] flex flex-col items-center justify-start gap-3.5 mt-10">
+              <Link key={product._id} href={`/shop/${product._id}`}>
+                <div className="w-[287px] flex flex-col items-center justify-start gap-3.5 mt-10">
                   <div className="relative w-full h-64 overflow-hidden">
                     <Image
                     className="object-cover w-full h-full rounded-lg"
